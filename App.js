@@ -28,7 +28,7 @@ class App extends React.Component {
 
 const styles = StyleSheet.create({
   appContainer: {
-    paddingTop: 15,
+    paddingTop: 30,
     paddingHorizontal: 20,
     backgroundColor: '#FFF',
     flex: 1,

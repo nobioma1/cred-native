@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   stepCount: {
-    opacity: 0.8,
+    opacity: 0.6,
   },
   indicatorContainer: {
     marginVertical: 20,
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    opacity: 0.5,
   },
   formFooter: {
     margin: 20,

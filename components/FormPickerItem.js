@@ -2,12 +2,12 @@ import React from 'react';
 import {StyleSheet, View, Picker, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const FormPickerItem = ({name, icon, value}) => {
+const FormPickerItem = ({name, children, value}) => {
   return (
     <View style={{width: `${95 / 2}%`}}>
       <Text style={styles.title}>{name}</Text>
       <View style={styles.pickerContainer}>
-        <Icon name={icon} color="#000" style={{opacity: 0.4}} size={18} />
+        {children}
         <Picker style={styles.picker}>
           <Picker.Item label={value} value={value} />
         </Picker>

@@ -1,13 +1,12 @@
 import React from 'react';
 import {View, TextInput, StyleSheet, Text} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const Input = ({value, name, icon}) => {
+const Input = ({value, name, children, icon}) => {
   return (
     <View style={{minWidth: `${95 / 2}%`}}>
       <Text style={styles.title}>{name}</Text>
       <View style={styles.inputContainer}>
-        <Icon name={icon} color="#000" style={{opacity: 0.4}} size={18} />
+        {children}
         <TextInput style={styles.inputStyle} value={value} />
       </View>
     </View>

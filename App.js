@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, SafeAreaView, Text} from 'react-native';
+import {StyleSheet, SafeAreaView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -11,8 +11,8 @@ const Stack = createStackNavigator();
 class App extends React.Component {
   render() {
     return (
-      <NavigationContainer>
-        <SafeAreaView style={styles.appContainer}>
+      <SafeAreaView style={styles.appContainer}>
+        <NavigationContainer>
           <Stack.Navigator
             screenOptions={{
               headerShown: false,
@@ -20,16 +20,16 @@ class App extends React.Component {
             <Stack.Screen name="Form" component={FormView} />
             <Stack.Screen name="Profile" component={EditProfile} />
           </Stack.Navigator>
-        </SafeAreaView>
-      </NavigationContainer>
+        </NavigationContainer>
+      </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   appContainer: {
-    marginTop: 15,
-    paddingHorizontal: 15,
+    paddingTop: 15,
+    paddingHorizontal: 20,
     backgroundColor: '#FFF',
     flex: 1,
   },

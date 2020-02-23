@@ -21,14 +21,12 @@ const styles = StyleSheet.create({
   pickerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderBottomWidth: 0.6,
+    borderBottomWidth: 1,
     borderStyle: 'solid',
-    borderBottomColor: '#555555',
+    borderBottomColor: '#dedede',
   },
   picker: {
-    marginLeft: 5,
     height: 50,
-    opacity: 0.5,
     backgroundColor: 'transparent',
     width: '100%',
   },

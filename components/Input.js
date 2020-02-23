@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, TextInput, StyleSheet, Text} from 'react-native';
 
-const Input = ({value, name, children, icon}) => {
+const Input = ({value, name, children, width}) => {
   return (
-    <View style={{minWidth: `${95 / 2}%`}}>
+    <View style={{width: width ? width : '100%'}}>
       <Text style={styles.title}>{name}</Text>
       <View style={styles.inputContainer}>
         {children}
@@ -17,22 +17,21 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderBottomWidth: 0.6,
+    borderBottomWidth: 1,
     borderStyle: 'solid',
-    borderBottomColor: '#555555',
-    opacity: 0.5,
+    borderBottomColor: '#dedede',
     backgroundColor: 'transparent',
   },
   inputStyle: {
     color: '#222222',
     paddingBottom: 5,
-    paddingLeft: 15,
+    paddingLeft: 10,
     fontSize: 14,
   },
   title: {
     color: '#274FED',
     fontSize: 12,
-    marginLeft: 18,
+    marginLeft: 20,
     marginBottom: -10,
   },
 });

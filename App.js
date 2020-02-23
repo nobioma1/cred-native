@@ -5,7 +5,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import FormView from './components/FormView';
 import EditProfile from './components/EditProfile';
-import Flex from './components/Flex';
 
 const Stack = createStackNavigator();
 

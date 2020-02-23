@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   indicator: {
-    width: 350 / 5,
+    width: `${98 / 5}%`,
     backgroundColor: '#274FED',
     opacity: 0.1,
     borderRadius: 3,

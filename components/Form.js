@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 import Input from './Input';
 import FormPickerItem from './FormPickerItem';
 import Calender from '../assets/calender';
@@ -30,7 +30,7 @@ class Form extends React.Component {
   render() {
     return (
       <View style={styles.form}>
-        <View style={styles.layout}>
+        <View style={[styles.layout, styles.spacing]}>
           <FormPickerItem name="Date of Birth" value={this.state.dob}>
             <Calender />
           </FormPickerItem>
@@ -38,10 +38,14 @@ class Form extends React.Component {
             <Male />
           </FormPickerItem>
         </View>
-        <Input name="Residential Address" value={this.state.residentialAddress}>
-          <Home />
-        </Input>
-        <View style={styles.layout}>
+        <View style={[styles.layout, styles.spacing, styles.fullWidth]}>
+          <Input
+            name="Residential Address"
+            value={this.state.residentialAddress}>
+            <Home />
+          </Input>
+        </View>
+        <View style={[styles.layout, styles.spacing]}>
           <FormPickerItem
             name="Educational Level"
             value={this.state.educationLevel}>
@@ -51,7 +55,7 @@ class Form extends React.Component {
             <Nationality />
           </FormPickerItem>
         </View>
-        <View style={styles.layout}>
+        <View style={[styles.layout, styles.spacing]}>
           <FormPickerItem
             name="Employment Status"
             value={this.state.employment}>
@@ -63,22 +67,30 @@ class Form extends React.Component {
             <Status />
           </FormPickerItem>
         </View>
-        <View style={styles.layout}>
-          <Input name="Guarantor’s Name" value={this.state.guarantorName}>
+        <View style={[styles.layout, styles.spacing]}>
+          <Input
+            name="Guarantor’s Name"
+            value={this.state.guarantorName}
+            width="48%">
             <GName />
           </Input>
           <FormPickerItem name="Relationship" value={this.state.relationship}>
             <Relationship />
           </FormPickerItem>
         </View>
-        <View style={styles.layout}>
-          <Input name="Guarantor’s Address" value={this.state.guarantorAddress}>
+        <View style={[styles.layout, styles.spacing]}>
+          <Input
+            name="Guarantor’s Address"
+            value={this.state.guarantorAddress}
+            width="49%">
             <Home />
           </Input>
           <Input
             name="Guarantor’s Contact Number"
             value={this.state.guarantorNumber}
-          />
+            width="48%">
+            <Text style={{paddingRight: 10}}></Text>
+          </Input>
         </View>
       </View>
     );
@@ -93,6 +105,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  spacing: {
     marginVertical: 10,
   },
 });

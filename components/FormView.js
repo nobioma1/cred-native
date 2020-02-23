@@ -9,50 +9,47 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Form from './Form';
 
-class FormView extends React.Component {
-  render() {
-    return (
-      <ScrollView style={{backgroundColor: '#FFF'}}>
-        <View style={styles.topSection}>
-          <TouchableOpacity style={styles.discardBtn}>
-            <Icon
-              name="chevron-left"
-              color="#555555"
-              size={30}
-              style={{padding: 0, marginLeft: -10}}
-            />
-          </TouchableOpacity>
-          <Text style={styles.stepCount}>Step 1 of 5</Text>
+const FormView = ({navigation}) => {
+  return (
+    <ScrollView style={{backgroundColor: '#FFF'}}>
+      <View style={styles.topSection}>
+        <TouchableOpacity style={styles.discardBtn}>
+          <Icon
+            name="chevron-left"
+            color="#555555"
+            size={30}
+            style={{padding: 0, marginLeft: -10}}
+          />
+        </TouchableOpacity>
+        <Text style={styles.stepCount}>Step 1 of 5</Text>
+      </View>
+      <View style={styles.indicatorContainer}>
+        <View style={[styles.indicator, styles.active]} />
+        <View style={styles.indicator} />
+        <View style={styles.indicator} />
+        <View style={styles.indicator} />
+        <View style={styles.indicator} />
+      </View>
+      <View>
+        <Text style={styles.title}>Complete Profile</Text>
+        <Text style={styles.subtitle}>
+          Tell us even more about yourself and ensure that all details provided
+          herein are valid and up to date.
+        </Text>
+      </View>
+      <Form />
+      <View style={styles.formFooter}>
+        <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+          <Text style={styles.btn}>NEXT</Text>
+        </TouchableOpacity>
+        <View style={styles.subtext}>
+          <Icon name="lock" color="#555555" size={15} />
+          <Text>{'  '}Your Data is Secure</Text>
         </View>
-        <View style={styles.indicatorContainer}>
-          <View style={[styles.indicator, styles.active]} />
-          <View style={styles.indicator} />
-          <View style={styles.indicator} />
-          <View style={styles.indicator} />
-          <View style={styles.indicator} />
-        </View>
-        <View>
-          <Text style={styles.title}>Complete Profile</Text>
-          <Text style={styles.subtitle}>
-            Tell us even more about yourself and ensure that all details
-            provided herein are valid and up to date.
-          </Text>
-        </View>
-        <Form />
-        <View style={styles.formFooter}>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Profile')}>
-            <Text style={styles.btn}>NEXT</Text>
-          </TouchableOpacity>
-          <View style={styles.subtext}>
-            <Icon name="lock" color="#555555" size={20} />
-            <Text>Your Data is Secure</Text>
-          </View>
-        </View>
-      </ScrollView>
-    );
-  }
-}
+      </View>
+    </ScrollView>
+  );
+};
 
 const styles = StyleSheet.create({
   topSection: {
